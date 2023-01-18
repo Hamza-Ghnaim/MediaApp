@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css" />
-    <script src="functionality1.js"></script>
+    <link rel="stylesheet" href="Login.css" />
+    <script src="Login.js"></script>
     <title>Gallery Login</title>
 </head>
 <body>
   <div class="enclosing">
     <p class="title">Log in</p>
-    <form class="form">
-      <input class="inputField" type="text" placeholder="Enter Username" name="uname" required>
-      <input class="inputField" type="password" placeholder="Enter Password" name="psw" >
-      <button class="loginButton" type="button">Login</button>
+    <form class="form" method="get">
+      <input id="email" class="input" type="text" placeholder="Enter Username" name="uname" required>
+      <input   class="input" type="password" placeholder="Enter Password" name="psw" >
+      <button class = "button" id = "button" type="button" onclick="matchUser()">Login</button>
       </div>
     </form>
   </div>
