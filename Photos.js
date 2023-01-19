@@ -1,18 +1,16 @@
-const album = JSON.parse(localStorage.albumID);
 document.addEventListener("DOMContentLoaded", () => {
-    // console.log()
-    showPhotos();
+    retrieveID();
 });
 
-// function showPhotos(){
-//         const img = document.createElement("img");
-//         img.src = "https://via.placeholder.com/600/771796"; 
-//         const currentDiv = document.getElementById("posts_container");
-//         console.log("4");
-//         currentDiv.prepend(img)
-// }
-const showPhotos = async ()=>{
-    const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${album.id}/photos`)
+const retrieveID = ()=>{
+    var urlObject = new URL(document.location.href);
+    var params = urlObject.searchParams;
+    var ID = params.get("id");
+    showPhotos(ID);
+}
+
+const showPhotos = async (id)=>{
+    const response = await fetch(`https://jsonplaceholder.typicode.com/albums/${id}/photos`)
     const albums = (((await(response.json()))))
     albums.map(object => {
         let img = document.createElement("img");
